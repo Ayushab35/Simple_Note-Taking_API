@@ -53,7 +53,7 @@ const delNote = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("Note not found!");
     }
-    if(note.user_id.toString() !== req.user.id){
+    if(note.user_id.toString() !== req.user.user.id){
         res.status(401);
         throw new Error("Unauthorized update");
     }
@@ -70,7 +70,7 @@ const updateNote = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error("Note not found!");
     }
-    if (note.user_id.toString() !== req.user.id) {
+    if (note.user_id.toString() !== req.user.user.id) {
         // Handle unauthorized update
         res.status(401);
         throw new Error("Unauthorized update");
