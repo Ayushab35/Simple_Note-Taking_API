@@ -74,10 +74,4 @@ const loginUser = AsyncHandler(async(req, res) =>{
     }
 })
 
-// @desc get the details of the user
-// @route GET /api/user/current
-// @access private
-const currentUser = AsyncHandler(async(req,res) =>{
-    res.status(200).json({message : "Hello, this is cuurent user !"});
-})
-module.exports = {registerUser, loginUser, currentUser};
+module.exports = {registerUser, loginUser};
